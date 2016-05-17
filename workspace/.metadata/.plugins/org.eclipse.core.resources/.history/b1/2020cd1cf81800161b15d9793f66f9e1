@@ -1,0 +1,33 @@
+package agenda;
+
+import java.util.Scanner;
+
+
+public class Teste {
+
+	public static void main(String[] args) {
+		Agenda agenda = new Agenda();
+		
+		Scanner ler= new Scanner(System.in);
+		
+		String nome;
+		int idade;
+		float altura;
+		
+		for(int i =0; i<10;i++);
+		
+		System.out.println("Nome:");
+		nome=ler.nextLine();
+		
+		System.out.println("Idade:");
+		idade=ler.nextInt();
+		
+		System.out.println("Altura:");
+		altura=ler.nextFloat();
+
+       agenda.armazenaPessoa(nome,idade,altura);
+       
+       agenda.imprimeAgenda();
+       
+	}
+}

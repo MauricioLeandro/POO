@@ -1,0 +1,14 @@
+package pratica_II;
+
+public class teste2 {
+
+	public static void main(String[] args) {
+		Conta_Banco CC= new Conta_Banco(3310, 300.00);
+		CC.depositar(150);
+	    CC.imprimir();
+		CC.sacar(100);
+		CC.imprimir();
+		System.out.println(CC.getCodigo());
+	}
+	
+}

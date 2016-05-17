@@ -1,0 +1,61 @@
+package agenda;
+
+public class Agenda {
+	Pessoa[]listaPessoa= new Pessoa[10];
+	
+	public void armazenaPessoa(String nome,int idade, float altura){
+			Pessoa pessoa =new Pessoa();
+		    int cont=0;
+		    
+		    while(cont<listaPessoa.length){
+		    	if(listaPessoa[cont]==null){
+		    		pessoa.setNome(nome);
+		    		pessoa.setIdade(idade);
+		    		pessoa.setAltura(altura);
+		    		listaPessoa[cont]=pessoa;
+					break;
+		    	}
+		    	cont++;
+		    }
+			
+		
+	}
+	
+	public void removePessoa (String nome){
+		int cont=0;
+		while (cont<10){
+			if (listaPessoa[cont].getNome().equals(nome)){
+				listaPessoa[cont]=null;
+				break;
+			}
+			cont++;
+		}
+	}
+	
+	public int buscaPessoa(String nome){
+		int cont=0;
+		while (cont<10){
+			if (listaPessoa[cont].getNome().equals(nome)){
+				return cont;
+			}
+			cont=cont+1;
+		}
+		return 0;
+	}
+	public void imprimeAgenda(){
+		int cont=0;
+		while (cont<10){
+			if(!(listaPessoa[cont]==null)){
+				System.out.println("Nome: " + listaPessoa[cont].getNome());
+				System.out.println("Idade: "+ listaPessoa[cont].getIdade());
+				System.out.println("Altura: " + listaPessoa[cont].getAltura());
+	    	}
+			cont+=1;
+		}
+	}
+    public  void  imprimePessoa(int index){
+    	System.out.println("Nome: \n" + listaPessoa[index].getNome());
+		System.out.println("Idade: "+ listaPessoa[index].getIdade());
+		System.out.println("Altura: " + listaPessoa[index].getAltura());
+    }
+}

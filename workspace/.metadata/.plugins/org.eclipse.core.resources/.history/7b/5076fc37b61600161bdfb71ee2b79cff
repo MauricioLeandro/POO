@@ -1,0 +1,53 @@
+package agenda;
+
+public class Agenda {
+	Pessoa[]lista= new Pessoa[10];
+	
+
+	
+	public void armazenaPessoa(String nome,int idade, float altura){
+		int cont=0;
+		while (cont<10){
+			lista[cont].setNome(nome);
+			lista[cont].setIdade(idade);
+			lista[cont].setAltura(altura);
+			cont++;
+		}
+	}
+	
+	public void removePessoa (String nome){
+		int cont=0;
+		while (cont<10){
+			if (lista[cont].getNome().equals(nome)){
+				lista[cont]=null;
+				break;
+			}
+			cont++;
+		}
+	}
+	
+	public int buscaPessoa(String nome){
+		int cont=0;
+		while (cont<10){
+			if (lista[cont].getNome().equals(nome)){
+				return cont;
+			}
+			cont=cont+1;
+		}
+		return 0;
+	}
+	public void imprimeAgenda(){
+		int cont=0;
+		while (cont<10){
+			System.out.println("Nome: " + lista[cont].getNome());
+			System.out.println("Idade: "+ lista[cont].getIdade());
+			System.out.println("Altura: " + lista[cont].getAltura());
+			cont+=1;					
+		}
+	}
+    public  void  imprimePessoa(int index){
+    	System.out.println("Nome: " + lista[index].getNome());
+		System.out.println("Idade: "+ lista[index].getIdade());
+		System.out.println("Altura: " + lista[index].getAltura());
+    }
+}

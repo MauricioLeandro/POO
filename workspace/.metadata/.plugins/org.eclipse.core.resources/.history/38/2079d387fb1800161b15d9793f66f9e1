@@ -1,0 +1,52 @@
+package agenda;
+
+import java.util.Scanner;
+
+import javax.swing.JOptionPane;
+
+
+public class Teste {
+
+	public static void main(String[] args) {
+		Agenda agenda = new Agenda();
+		
+		Scanner ler= new Scanner(System.in);
+		
+		String nome;
+		int idade;
+		float altura;
+		byte vezes;
+		byte cont=0;
+		
+		System.out.println("Deseja inserir quantas pessoas: ");
+		vezes=ler.nextByte();
+		while(vezes>10){
+			System.out.println("Deseja inserir quantas pessoas: NO MAXIMO 10");
+			vezes=ler.nextByte();
+		}
+		
+		while(cont<vezes){
+			nome=ler.nextLine();
+			
+			System.out.println("Nome:");
+			nome=ler.nextLine();
+			
+			System.out.println("Idade:");
+			idade=ler.nextInt();
+			
+			System.out.println("Altura:");
+			altura=ler.nextFloat();
+	
+	       agenda.armazenaPessoa(nome,idade,altura);
+	       cont++;
+		}
+       
+       agenda.imprimeAgenda();
+       
+       System.out.println("Nome para busca: ");
+       String nomeBusca=ler.nextLine();
+       nomeBusca=ler.nextLine();
+       agenda.buscaPessoa(nomeBusca);
+       
+	}
+}

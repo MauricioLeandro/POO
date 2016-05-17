@@ -1,0 +1,16 @@
+
+public class Teste {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+	Agenda	agenda=new Agenda();
+	
+	agenda.armazenaPessoa("Thiago", 27, 1.68f);
+	agenda.imprimeAgenda();
+	agenda.armazenaPessoa("Julio", 28, 1.73f);
+	agenda.imprimeAgenda();
+
+	}
+
+}

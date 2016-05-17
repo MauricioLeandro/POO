@@ -1,0 +1,72 @@
+package agenda;
+
+public class Agenda {
+	Pessoa[]listaPessoa= new Pessoa[10];
+	//vetor do tipo pessoa
+	
+	public void armazenaPessoa(String nome,int idade, float altura){
+			Pessoa pessoa =new Pessoa();
+		    int cont=0;
+		    
+		    while(cont<listaPessoa.length){
+		    	if(listaPessoa[cont]==null){
+		    	//se a posição da lista for nula(vazia) quer dizer que não existe cadastro, então a pessoa é inserida
+		    		pessoa.setNome(nome);
+		    		pessoa.setIdade(idade);
+		    		pessoa.setAltura(altura);
+		    		listaPessoa[cont]=pessoa;
+					break;
+		    	}
+		    	cont++;
+		    }
+			
+		
+	}
+	
+	public void removePessoa (String nome){
+		int cont=0;
+		while (cont<10){
+			//recebe o nome como parametro e verifica se o cadastro existe na lista
+			if (listaPessoa[cont].getNome().equals(nome)){
+				listaPessoa[cont]=null;
+				//se achar a pessoa, ele define a posicao inteira como nula, e para o while com o break;
+				break;
+			}
+			cont++;
+		}
+	}
+	
+	public int buscaPessoa(String nome){
+		int cont=0;
+		while (cont<10){
+			if(listaPessoa[cont]==null){
+				//se for nula a posição, ela é ignorada e passa para o proximo
+			}
+			else if(listaPessoa[cont].getNome().equals(nome)){
+				//verifica se o nome existe na lista, se sim, retorna a posição da pessoa
+				return cont;
+			}
+		cont=cont+1;
+		}
+		return cont;
+	}
+	public void imprimeAgenda(){
+		int cont=0;
+		while (cont<10){
+			if(!(listaPessoa[cont]==null)){
+				//se a posição da lista for nula, não irá imprimir nada, só irá imprimir onde
+				//existir algum cadastro
+				System.out.println("Nome: " + listaPessoa[cont].getNome());
+				System.out.println("Idade: "+ listaPessoa[cont].getIdade());
+				System.out.println("Altura: " + listaPessoa[cont].getAltura()+"\n");
+	    	}
+			cont+=1;
+		}
+	}
+    public  void  imprimePessoa(int index){
+    	//usa a posicao recebida do "buscaPessoa" para imprimir as informações do cadastro na posição
+			System.out.println("Nome: " + listaPessoa[index].getNome());
+			System.out.println("Idade: "+ listaPessoa[index].getIdade());
+			System.out.println("Altura: " + listaPessoa[index].getAltura());
+    }
+}
